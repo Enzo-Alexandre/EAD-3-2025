@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER FIXO */
+.header {
+    background-color: #222;
+    color: white;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header h1 {
+    font-size: 20px; 
+}
+
+/* BOTÃO MENU */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: 1rem;
+    display: none;
+}
+
+/* LAYOUT PRINCIPAL */
+.wrapper {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    margin-top: 60px; /* Para não sobrepor o header */
+}
+
+/* SIDEBAR */
+.sidebar {
+    background-color: #333;
+    color: white;
+    width: 250px;
+    height: calc(100vh - 60px);
+    position: fixed;
+    left: 0;
+    padding: 20px;
+    display: block;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.img-sidebar {
+    width: 8rem;  /* Define um tamanho pequeno em rem */
+    height: 8rem; /* Mantém a proporção */
+    border-radius: 50%; /* Deixa a imagem circular */
+    object-fit: cover; /* Garante que a imagem se encaixe bem */
+}
+
+/* ÁREA PRINCIPAL */
+main {
+    flex-direction: row; /* Deixa os cards lado a lado */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha de baixo */
+    gap: 1rem; 
+    padding: 1rem;
+    justify-content: center; 
+    align-items: flex-start;
+    flex: 1; /* Faz o main ocupar todo o espaço restante */
+    min-height: calc(100vh - 120px); /* Garante espaço para o conteúdo e footer */
+    margin-left: 17rem;
+}
+
+/* FOOTER FIXO */
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column; /* Sidebar empilha no mobile */
+    }
+    
+    .sidebar { /* Nosso Menu com os itens */
+        display: none;
+        width: 100%;
+        position: absolute;
+        height: auto;
+    }
+
+    main { /* Nosso conteúdo principal*/
+        margin-left: 0;
+    }
+
+    .menu-toggle { /* Nosso menu hamburger */
+        display: block;
+    }
+
+    .sidebar.show { /* Essa é uma classe que setamos para quando clicar sobre o mesmo mostre o menu com os itens, usado no JS */
+        display: block;
+        top: 60px;
+        width: 250px;
+        height: calc(100vh - 60px);
+    }
+}
+
+/* Parte do formulário */
+
+.container {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.card h2 {
+    margin-bottom: 2rem;
+    font-size: 18px;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group input[type="checkbox"] {
+    width: 1.2rem;  /* Ajusta o tamanho do checkbox */
+    height: 1.2rem;
+    cursor: pointer; /* Muda o cursor para indicar clique */
+    accent-color: #007bff; /* Muda a cor do checkbox (compatível com navegadores modernos) */
+    margin-left: 0.5rem; /* Adiciona um pequeno espaço entre o label e o checkbox */
+}
+
+.input-group input[type="radio"] {
+    width: 1.2rem;  /* Tamanho do botão de rádio */
+    height: 1.2rem;
+    cursor: pointer; /* Muda o cursor para indicar clique */
+    accent-color: #007bff; /* Define a cor quando selecionado */
+    margin-left: 0.5rem; /* Espaço entre o texto e os botões */
+}
+
+.input-group select {
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 0.5rem; /* Espaçamento interno */
+    font-size: 1rem; /* Tamanho da fonte */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 0.5rem; /* Borda arredondada */
+    background-color: #fff; /* Fundo branco */
+    cursor: pointer; /* Mostra que é interativo */
+    appearance: none; /* Remove a aparência padrão do navegador */
+}
+
+/* Adiciona uma seta personalizada para o select */
+.input-group select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23007bff'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2rem; /* Espaço para a seta */
+}
+
+/* Efeito ao passar o mouse */
+.input-group select:hover {
+    border-color: #007bff;
+}
+
+/* Efeito ao focar */
+.input-group select:focus {
+    border-color: #007bff;
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.input-group input[type="file"] {
+    font-size: 1rem; /* Ajusta o tamanho da fonte */
+    padding: 0.5rem; /* Adiciona um espaçamento interno */
+    border: 1px solid #ccc; /* Borda cinza padrão */
+    border-radius: 0.5rem; /* Borda arredondada */
+    background-color: #fff; /* Fundo branco */
+    cursor: pointer; /* Mostra que é clicável */
+    width: 100%; /* Faz o input ocupar toda a largura disponível */
+}
+
+/* Personalizando o botão de upload em alguns navegadores */
+.input-group input[type="file"]::-webkit-file-upload-button {
+    background-color: #007bff; /* Cor azul padrão */
+    color: #fff; /* Texto branco */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Efeito hover no botão */
+.input-group input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Estilizando para Firefox */
+.input-group input[type="file"]::file-selector-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Efeito hover no botão (Firefox) */
+.input-group input[type="file"]::file-selector-button:hover {
+    background-color: #0056b3;
+}
+
+.input-group textarea {
+    width: 100%; /* Ocupa toda a largura disponível */
+    height: 6rem; /* Altura inicial do campo */
+    padding: 0.75rem; /* Espaçamento interno para melhor legibilidade */
+    font-size: 1rem; /* Tamanho da fonte */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 0.5rem; /* Borda arredondada */
+    background-color: #fff; /* Fundo branco */
+    resize: vertical; /* Permite redimensionamento apenas vertical */
+    outline: none; /* Remove contorno padrão ao focar */
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efeito ao focar */
+.input-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Para inputs ao lado */
+
+.input-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-group {
+    flex: 1; /* Faz os inputs ocuparem a mesma largura */
+    min-width: 5rem
+}
+
+.btn-save {
+    background-color: green;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-clear {
+    background-color: #E1AD01; /* Cor mostarda */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}

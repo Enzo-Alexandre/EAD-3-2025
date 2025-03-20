@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Completo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <h1>Formulário Completo</h1>
+    </header>
+
+    <div class="wrapper">    
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Confiração</a></li>
+                <li><a href="#">Sobre</a></li>
+                <hr /><br />
+            </ul>
+            <img class="img-sidebar" src="img-perfil.jpg" alt="imagen-perfil">
+        </nav>
+
+        <main>
+            <!-- Informações Pessoais -->
+            <div class="card">
+                <h2>Informações Pessoais</h2>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="nome_completo">Nome Completo:</label>
+                        <input type="text" id="nome_completo" placeholder="Digite seu nome completo">
+                    </div>
+                    <div class="input-group">
+                        <label for="data_nascimento">Data de Nascimento:</label>
+                        <input type="date" id="data_nascimento">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" placeholder="000.000.000-00">
+                    </div>
+                    <div class="input-group">
+                        <label for="rg">RG:</label>
+                        <input type="text" id="rg" placeholder="Digite seu RG">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="sexo">Sexo:</label>
+                        <select id="sexo">
+                            <option>Masculino</option>
+                            <option>Feminino</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="estado_civil">Estado Civil:</label>
+                        <select id="estado_civil">
+                            <option>Solteiro(a)</option>
+                            <option>Casado(a)</option>
+                            <option>Divorciado(a)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="foto_perfil">Foto de Perfil:</label>
+                        <input type="file" id="foto_perfil">
+                    </div>
+                    <div class="input-group">
+                        <label for="assinatura">Assinatura Digital:</label>
+                        <input type="file" id="assinatura">
+                    </div>
+                </div>
+            </div>
+            <!-- Contato -->
+            <div class="card">
+                <h2>Contato</h2>
+                <div class="input-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="Digite seu email">
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="text" id="telefone" placeholder="(00) 0000-0000">
+                    </div>
+                    <div class="input-group">
+                        <label for="celular">Celular:</label>
+                        <input type="text" id="celular" placeholder="(00) 00000-0000">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="endereco">Endereço:</label>
+                        <textarea id="endereco" placeholder="Digite seu endereço"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" placeholder="00000-000">
+                    </div>
+                    <div class="input-group">
+                        <label for="pais">País:</label>
+                        <select id="pais">
+                            <option>Brasil</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>  
+                </div>
+                
+            </div>
+            <!-- Informações Profissionais -->
+            <div class="card">
+                <h2>Informações Profissionais</h2>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="ocupacao">Ocupação:</label>
+                        <input type="text" id="ocupacao" placeholder="Digite sua ocupação">
+                    </div>
+                    <div class="input-group">
+                        <label for="empresa">Empresa:</label>
+                        <input type="text" id="empresa" placeholder="Nome da empresa">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="cnpj">CNPJ:</label>
+                        <input type="text" id="cnpj" placeholder="00.000.000/0000-00">
+                    </div>
+                    <div class="input-group">
+                        <label for="cargo">Cargo:</label>
+                        <input type="text" id="cargo" placeholder="Seu cargo na empresa">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="salario">Salário Aproximado:</label>
+                        <input type="number" id="salario" placeholder="Digite seu salário">
+                    </div>
+                    <div class="input-group">
+                        <label for="data_admissao">Data de Admissão:</label>
+                        <input type="date" id="data_admissao">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferências e Redes Sociais -->
+            <div class="card">
+                <h2>Preferências e Redes Sociais</h2>
+                <div class="input-group">
+                    <label for="genero_musical">Gênero Musical Favorito:</label>
+                    <input type="text" id="genero_musical" placeholder="Digite seu gênero musical favorito">
+                </div>
+                <div class="input-group">
+                    <label>Hobbies:</label>
+                    <input type="checkbox" id="futebol"> Futebol
+                    <input type="checkbox" id="leitura"> Leitura
+                    <input type="checkbox" id="viagens"> Viagens
+                    <input type="checkbox" id="musica"> Música
+                </div>
+                <div class="input-group">
+                    <label for="facebook">Facebook:</label>
+                    <input type="text" id="facebook" placeholder="Link do Facebook">
+                </div>
+                <div class="input-group">
+                    <label for="instagram">Instagram:</label>
+                    <input type="text" id="instagram" placeholder="Link do Instagram">
+                </div>
+                <div class="input-group">
+                    <label for="linkedin">LinkedIn:</label>
+                    <input type="text" id="linkedin" placeholder="Link do LinkedIn">
+                </div>
+                <div class="input-group">
+                    <label>Notificações via E-mail:</label>
+                    <input type="radio" name="notificacao" value="sim"> Sim
+                    <input type="radio" name="notificacao" value="nao"> Não
+                </div>
+            </div>
+
+            <!-- Pagamento e Dados Bancários -->
+            <div class="card">
+                <h2>Pagamento e Dados Bancários</h2>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="cartao">Número do Cartão:</label>
+                        <input type="text" id="cartao" placeholder="0000 0000 0000 0000">
+                    </div>
+                    <div class="input-group">
+                        <label for="vencimento">Data de Vencimento:</label>
+                        <input type="month" id="vencimento">
+                    </div>
+                    <div class="input-group">
+                        <label for="cvv">Código de Segurança:</label>
+                        <input type="number" id="cvv" placeholder="CVV">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="banco">Banco:</label>
+                        <select id="banco">
+                            <option>Banco do Brasil</option>
+                            <option>Caixa</option>
+                            <option>Bradesco</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="agencia">Agência:</label>
+                        <input type="text" id="agencia" placeholder="Digite a agência">
+                    </div>
+                    <div class="input-group">
+                        <label for="conta">Conta Corrente:</label>
+                        <input type="text" id="conta" placeholder="Digite a conta">
+                    </div>
+                    <div class="input-group">
+                        <label for="tipo_conta">Tipo de Conta:</label>
+                        <select id="tipo_conta">
+                            <option>Poupança</option>
+                            <option>Corrente</option>
+                        </select>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Outros Recursos -->
+            <div class="card">
+                <h2>Outros Recursos</h2>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="documento">Upload de Documento PDF:</label>
+                        <input type="file" id="documento">
+                    </div>
+                    <div class="input-group">
+                        <label for="horario">Horário de Preferência para Contato:</label>
+                        <input type="time" id="horario">
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="dependentes">Número de Dependentes:</label>
+                        <input type="number" id="dependentes">
+                    </div>
+                    <div class="input-group">
+                        <label for="cor">Cor Favorita:</label>
+                        <input type="text" id="cor">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="comentarios">Comentários ou Observações:</label>
+                    <textarea id="comentarios" placeholder="Digite seus comentários"></textarea>
+                </div>
+            </div>
+            <!-- Credenciais de Acesso -->
+            <div class="card">
+                <h2>Credenciais de Acesso</h2>
+                <div class="input-group">
+                    <label for="username">Nome de Usuário:</label>
+                    <input type="text" id="username" placeholder="Escolha um nome de usuário">
+                </div>
+                <div class="input-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="Digite sua senha">
+                </div>
+                <div class="input-group">
+                    <label for="confirmar_senha">Confirmação de Senha:</label>
+                    <input type="password" id="confirmar_senha" placeholder="Confirme sua senha">
+                </div>
+                <div class="input-group">
+                    <label for="pergunta_secreta">Pergunta Secreta:</label>
+                    <select id="pergunta_secreta">
+                        <option>Qual o nome do seu primeiro pet?</option>
+                        <option>Qual sua cidade natal?</option>
+                        <option>Qual seu filme favorito?</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="resposta_secreta">Resposta Secreta:</label>
+                    <input type="text" id="resposta_secreta" placeholder="Digite sua resposta">
+                </div>
+                <div class="input-group">
+                    <div class="input-row">
+                        <label class="checkbox" for="aceita_termos">Aceito os Termos de Uso</label>
+                        <input class="checkbox" type="checkbox" id="aceita_termos">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <button class="btn-save">Salvar</button>
+                        <button class="btn-clear">Limpar</button>
+                    <div class="input-group"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Meu Site - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
